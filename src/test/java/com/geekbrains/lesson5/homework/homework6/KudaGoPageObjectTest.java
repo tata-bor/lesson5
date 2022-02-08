@@ -7,6 +7,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -31,9 +32,13 @@ public class KudaGoPageObjectTest {
 
     @Test
     void Test () {
-        new LoginPage(driver).loginInput.sendKeys("bakexol605@dkb3.com");
-        new LoginPage(driver).passwordInput.sendKeys("ЕИ*01В");
-        new LoginPage(driver).loginButton.click();
+        driver.findElement(By.xpath("//*[@id='userzone']/a[1]/span")).click();
+
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.fillLogin("bakexol605@dkb3.com");
+        loginPage.fillPassword("ЕИ*01В");
+        loginPage.clickLoginButton();
+
     }
 
 
