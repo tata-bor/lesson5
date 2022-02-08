@@ -12,7 +12,7 @@ import java.time.Duration;
 
 //КЕЙС: Пользователь из Краснодара хочет посмотреть событие в Новосибирске в четверг 3 февраля.
 public class KudaGoTest {
-    WebDriver driver;
+   WebDriver driver;
     WebDriverWait webDriverWait;
 
     @BeforeAll
